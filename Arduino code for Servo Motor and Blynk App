@@ -1,0 +1,28 @@
+/*************************************************************/
+/*********** Arduino code for Servo Motor and Blynk App ************/
+/*************************************************************/
+
+#define BLYNK_PRINT Serial
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+#include <Servo.h>
+
+char auth[] = "m_BOUrKGgJCEPjUS2i4bpgnklh3QYAvF"; //smart pet feeder authentication code
+char ssid[] = "<Your WiFi ID>";
+char pass[] = "<Your WiFi Password>";
+
+Servo servo;
+BLYNK_WRITE(V3) {
+servo.write(param.asInt());
+}
+
+void setup() {
+Blynk.begin(auth, ssid, pass);
+servo.attach(5); // 5-d1
+}
+
+void loop()
+{
+Blynk.run(); 
+}
+

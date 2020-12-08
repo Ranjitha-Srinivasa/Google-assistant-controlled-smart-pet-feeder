@@ -1,0 +1,29 @@
+/******************************************************/
+/*********** Arduino code for FSR and Blynk App ************/
+/*******************************************************/
+
+#include <Wire.h>
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+char auth[] = "m_BOUrKGgJCEPjUS2i4bpgnklh3QYAvF"; //smart pet feeder authentication code
+char ssid[] = "<Your WiFi ID>";
+char pass[] = "<Your WiFi Password>";
+
+const int FSR_PIN = A0; // Pin connected to FSR/resistor divider
+
+void setup()
+{
+  Blynk.begin(auth, ssid, pass);
+  Serial.begin(115200);
+  pinMode(FSR_PIN, INPUT);
+}
+
+void loop()
+{
+	int fsrReading = analogRead(FSR_PIN);
+	Serial.println("Force: " + String(fsrReading) + ".");
+	Serial.println();
+	Blynk.run();
+	delay(1000);
+}
+

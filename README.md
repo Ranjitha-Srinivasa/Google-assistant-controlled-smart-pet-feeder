@@ -1,0 +1,2 @@
+# Google-assistant-controlled-smart-pet-feeder
+A  smart  pet  feeder  built  with  IoT  concept  is presented in this report in order to explore the possibility  of  using  IoT  technology  to  make  a pet feeder that can automatically feed pets when pet   owners   send   a   command   via   Google Assistant, control from a mobile app, or at the time set up by the pet owners previously. This pet feeder can also detect if the food bowl needs a reload of food by sensing the weight of it and provide a feeding history chart.
